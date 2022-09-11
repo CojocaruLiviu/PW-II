@@ -25,6 +25,12 @@ class CountriesController{
         ])
     }
 
+    create(request, response){
+        const country = request.body;
+        country.id = 1; 
+        return response.json(country);
+    }
+
 }
 
 module.exports = new CountriesController()
