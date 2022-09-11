@@ -12,6 +12,19 @@ class CountriesController{
         ])
     }
 
+    getOne(request, response){
+        return response.json([
+            {
+                id: request.params.id,
+                name: "Moldova",
+                code: "MD",
+                flag: null,
+                area: 1400000,
+                population: 2890321
+            }
+        ])
+    }
+
 }
 
 module.exports = new CountriesController()
