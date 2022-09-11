@@ -37,6 +37,9 @@ class CountriesController{
         return response.json(country);
     }
 
+    delete(request, response){
+        return response.json({});
+    }
 }
 
 module.exports = new CountriesController()
