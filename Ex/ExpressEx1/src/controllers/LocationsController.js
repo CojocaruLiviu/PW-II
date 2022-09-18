@@ -2,7 +2,7 @@ class LocationsController{
     getAll(request, response){
         return response.json([
             {
-                id: 1,
+                id: 12,
                 name: "Moldova",
                 code: "MD",
                 flag: null,
