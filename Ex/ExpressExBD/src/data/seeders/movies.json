@@ -1,0 +1,47 @@
+[
+    {
+        "name": "SlenderMan",
+        "code": 1,
+        "countryId": 1
+    },
+    {
+        "name": "DoRevenge",
+        "code": 2,
+        "countryId": 1
+    },
+    {
+        "name": "Beast",
+        "code": 3,
+        "countryId": 1
+    },
+    {
+        "name": "SheHulk",
+        "code": 1,
+        "countryId": 2
+    },
+    {
+        "name": "CobraKay",
+        "code": 2,
+        "countryId": 2
+    },
+    {
+        "name": "Vengeance",
+        "code": 3,
+        "countryId": 2
+    },
+    {
+        "name": "Santo",
+        "code": 1,
+        "countryId": 3
+    },
+    {
+        "name": "MargoGaux",
+        "code": 2,
+        "countryId": 3
+    },
+    {
+        "name": "Saloum",
+        "code": 3,
+        "countryId": 3
+    }
+]

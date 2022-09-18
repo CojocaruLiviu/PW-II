@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Horror",
+        "code": "HR"
+    },
+    {
+        "name": "Comedy",
+        "code": "CO"
+    },
+    {
+        "name": "Triller",
+        "code": "TR"
+    }
+]
