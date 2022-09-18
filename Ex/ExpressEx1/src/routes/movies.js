@@ -2,7 +2,7 @@
 const Router = require("express");
 const router = new Router();
 
-const controller = require('../controllers/CountriesController')
+const controller = require('../controllers/MoviesController')
 
 router.get('/', controller.getAll)
 router.get('/:id', controller.getOne)

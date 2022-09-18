@@ -2,7 +2,7 @@
 const Router = require("express");
 const router = new Router();
 
-const controller = require('../controllers/LocationsController')
+const controller = require('../controllers/GenresController')
 
 router.get('/', controller.getAll)
 router.get('/:id', controller.getOne)

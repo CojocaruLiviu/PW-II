@@ -2,7 +2,7 @@
 const Router = require("express");
 const router = new Router();
 
-const controller = require('../controllers/regionsController')
+const controller = require('../controllers/TypesController')
 
 router.get('/', controller.getAll)
 router.get('/:id', controller.getOne)
