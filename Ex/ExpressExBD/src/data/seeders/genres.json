@@ -1,14 +1,15 @@
 [
     {
-        "name": "Horror",
-        "code": "HR"
+        "id": 1,
+        "name": "Horror"
     },
     {
-        "name": "Comedy",
-        "code": "CO"
+        "id": 2,
+        "name": "Comedy"
+        
     },
     {
-        "name": "Triller",
-        "code": "TR"
+        "id": 3,
+        "name": "Triller"
     }
 ]

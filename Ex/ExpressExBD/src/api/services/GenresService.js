@@ -1,5 +1,5 @@
 const GenresRepository = require('../../database/repositories/GenresRepository')
-const TipesRepository = require('../../database/repositories/TypesRepository')
+const TipesRepository = require('../../database/repositories/Mov_ratingsRepository')
 
 class GenresService {
     async getAll(fields = undefined) {

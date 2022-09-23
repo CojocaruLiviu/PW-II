@@ -6,7 +6,8 @@ class CountriesController{
             return await response.status(200).json(await MoviesService.getAll([
                 'id',
                 'name',
-                'code'
+                'year',
+                'time'
             ]))
         } catch(error){
             return await response.status(500).json(JSON.stringify(error))
@@ -15,9 +16,9 @@ class CountriesController{
 
     async getOne(request, response){
         try{
-            const country = await MoviesService.getOne(request.params.id)
-            if(country){
-                return response.status(200).json(country)
+            const movie = await MoviesService.getOne(request.params.id)
+            if(movie){
+                return response.status(200).json(movie)
             }
             return response.status(404).json()
         } catch(error){
@@ -50,28 +51,6 @@ class CountriesController{
             return response.status(200).json(await MoviesService.delete(request.params.id))
         } catch(error){
             return response.status(400).json(JSON.stringify(error))
-        }
-    }
-
-    async getRegions(request, response){
-        try{
-            return response.status(200).json(await MoviesService.getRegions(
-                request.params.id, 
-                ['id', 'name', 'code']
-            ))
-        } catch(error){
-            return response.status(500).json(JSON.stringify(error))
-        }
-    }
-
-    async getLocations(request, response){
-        try{
-            return response.status(200).json(await MoviesService.getLocations(
-                request.params.id, 
-                ['id', 'name', 'regionId']
-            ))
-        } catch(error){
-            return response.status(500).json(JSON.stringify(error))
         }
     }
 }

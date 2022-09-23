@@ -22,6 +22,6 @@
     "seed": "cd src/database && npx sequelize-cli db:seed:all",
     "seed:undo": "cd src/database && npx sequelize-cli db:seed:undo"
   },
-  "author": "Sergiu Chilat",
+  "author": "User",
   "license": "ISC"
 }

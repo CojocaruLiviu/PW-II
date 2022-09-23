@@ -1,8 +1,8 @@
 const MoviesRepository = require('../../database/repositories/MoviesRepository')
 const GenresRepository = require('../../database/repositories/GenresRepository')
-const TypesRepository = require('../../database/repositories/TypesRepository')
+const ReviewsRepository = require('../../database/repositories/Mov_ratingsRepository')
 
-class CountriesService {
+class MoviesService {
     async getAll(fields = undefined) {
         return await MoviesRepository.getAll(fields)
     }
@@ -36,4 +36,4 @@ class CountriesService {
     }
 }
 
-module.exports = new CountriesService()
+module.exports = new MoviesService()

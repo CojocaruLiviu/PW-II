@@ -5,8 +5,7 @@ class GenresController{
         try{
             return await response.status(200).json(await GenresService.getAll([
                 'id',
-                'name',
-                'code'
+                'name'
             ]))
         } catch(error){
             return await response.status(500).json(JSON.stringify(error))
@@ -54,15 +53,6 @@ class GenresController{
         }
     }
 
-    async getLocations(request, response){
-        try{
-            return response.status(200).json(await GenresService.getLocations(
-                request.params.id
-            ))
-        } catch(error){
-            return response.status(500).json(JSON.stringify(error))
-        }
-    }
 }
 
 module.exports = new GenresController()

@@ -1,12 +1,12 @@
 'use strict';
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class Country extends Model {
+    class Movie extends Model {
         static associate(models) {
-            Country.hasMany(models.Movie)
+            Movie.hasMany(models.Movie)
         }
     }
-    Country.init(
+    Movie.init(
         {
             id: {
                 type: DataTypes.INTEGER,
@@ -16,13 +16,16 @@ module.exports = (sequelize, DataTypes) => {
             name: {
                 type: DataTypes.STRING(50)
             },
-            code: {
-                type: DataTypes.STRING(2)
+            year:{
+                type: DataTypes.FLOAT(4)
+            },
+            time:{
+                type: DataTypes.FLOAT(2.2)
             }
         },
         {
             sequelize,
             modelName: 'Movie'
         });
-    return Country;
+    return Movie;
 };

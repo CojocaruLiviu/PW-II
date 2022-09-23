@@ -1,6 +1,6 @@
 const Movie = require('../models').Movie
 
-class CountriesRepository {
+class MoviesRepository {
     async getAll(fields = undefined) {
         return await Movie.findAll({attributes: fields})
     }
@@ -9,14 +9,14 @@ class CountriesRepository {
         return await Movie.findByPk(id)
     }
 
-    async create(country) {
-        return await Movie.create(country)
+    async create(movie) {
+        return await Movie.create(movie)
     }
 
-    async update(id, country) {
-        const existingCountry = await Movie.findByPk(id)
-        if (existingCountry) {
-            return await existingCountry.update(country);
+    async update(id, movie) {
+        const existingMovie = await Movie.findByPk(id)
+        if (existingMovie) {
+            return await existingMovie.update(movie);
         }
         return null;
     }
@@ -28,4 +28,4 @@ class CountriesRepository {
     }
 }
 
-module.exports = new CountriesRepository()
+module.exports = new MoviesRepository()
