@@ -7,13 +7,29 @@ module.exports = {
           allowNull: false,
           // autoIncrement: true,
           foreignKey: true,
-          type: Sequelize.INTEGER
+          type: Sequelize.INTEGER,
+          // references: {
+          // //   model: 'genres',
+          // //   key: 'id'
+          // // }
         },
         movie_id: {
           allowNull: false,
           type: Sequelize.INTEGER,
-          foreignKey: true
+          foreignKey: true,
+          // references: {
+          //   model: 'movies',
+          //   key: 'id'
+          // }
         }
+      },
+      {
+        indexes: [
+          {
+            unique: true,
+            fields: ['genreId', 'movieId']
+          }
+        ]
       });
   },
   async down(queryInterface, Sequelize) {

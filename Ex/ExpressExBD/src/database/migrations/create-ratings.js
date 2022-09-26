@@ -3,19 +3,30 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('ratings',
       {
+        id: {
+          allowNull: false,
+          autoIncrement: true,
+          primaryKey: true,
+          type: Sequelize.INTEGER
+        },
         user_id: {
           allowNull: false,
           type: Sequelize.INTEGER,
-          foreignKey:true
+          foreignKey:true,
+          // references: {
+          //   model: 'users',
+          //   key: 'id'
+          // }
         },
         movie_id: {
           type: Sequelize.STRING(50),
-          foreignKey:true
+          foreignKey:true,
+          // references: {
+          //   model: 'movies',
+          //   key: 'id'
+          // }
         },
-        movie_like:{
-            type: Sequelize.INTEGER
-         
-        },
+       
         // code: {
         //   type: Sequelize.STRING(2)
         // },

@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
       User.belongsTo(models.User)
-    //   User.hasMany(models.Mov_coments)
+    //   User.belongsTo(models.Mov_coments)
       User.hasMany(models.Movie)
     }
   }

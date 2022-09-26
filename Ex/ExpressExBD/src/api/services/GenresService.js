@@ -17,7 +17,7 @@ class GenresService {
     async update(id, genre) {
         const existingGenre = await GenresRepository.getOne(id)
         if (existingGenre) {
-            return await existingRegion.update(genre);
+            return await existingServices.update(genre);
         }
         return null;
     }
@@ -27,7 +27,7 @@ class GenresService {
     }
 
     async getLocations(genreId) {
-        return await TipesRepository.getAllOfRegion(genreId)
+        return await TipesRepository.getAllOfServices(genreId)
     }
 }
 

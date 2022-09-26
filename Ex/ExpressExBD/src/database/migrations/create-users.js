@@ -12,13 +12,6 @@ module.exports = {
         name: {
           type: Sequelize.STRING(50)
         },
-        // code: {
-        //   type: Sequelize.STRING(2)
-        // },
-        // movieId: {
-        //   type: Sequelize.INTEGER,
-        //   foreignKey: true
-        // },
         createdAt: {
           allowNull: false,
           type: Sequelize.DATE,
@@ -29,6 +22,14 @@ module.exports = {
           type: Sequelize.DATE,
           defaultValuse: Sequelize.literal('NOW()')
         }
+      },
+      {
+        indexes: [
+          {
+            unique: true,
+            fields: ['userId', 'movieId']
+          }
+        ]
       });
   },
   async down(queryInterface, Sequelize) {

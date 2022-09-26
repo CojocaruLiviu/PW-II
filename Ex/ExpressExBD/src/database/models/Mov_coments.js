@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
   class Genre extends Model {
     static associate(models) {
       Genre.hasMany(models.Movie)
-      Genre.belongsTo(models.User)
+      Genre.hasMany(models.User)
     }
   }
   Genre.init(

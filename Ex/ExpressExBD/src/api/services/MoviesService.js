@@ -27,11 +27,11 @@ class MoviesService {
         return await MoviesRepository.delete(id)
     }
 
-    async getRegions(genreId, fields) {
+    async getMovies(genreId, fields) {
         return await GenresRepository.getAllOfGenre(genreId, fields);
     }
 
-    async getLocations(genreId, fields) {
+    async getGenres(genreId, fields) {
         return await TypesRepository.getAllOfType(genreId, fields);
     }
 }
