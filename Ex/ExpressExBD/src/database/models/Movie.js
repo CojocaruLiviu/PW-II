@@ -3,7 +3,7 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
     class Movie extends Model {
         static associate(models) {
-            Movie.hasMany(models.Movie)
+            Movie.hasMany(models.Mov_genr)
             Movie.hasMany(models.User)
         }
     }
@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
         {
             id: {
                 type: DataTypes.INTEGER,
-                primaryKey: true,
-                autoIncrement: true
+                primaryKey: true
+                
             },
             name: {
                 type: DataTypes.STRING(50)

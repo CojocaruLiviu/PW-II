@@ -3,8 +3,7 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Genre extends Model {
     static associate(models) {
-      Genre.belongsTo(models.Movie)
-      Genre.hasMany(models.Mov_rating)
+      Genre.hasMany(models.Mov_genr)
     }
   }
   Genre.init(

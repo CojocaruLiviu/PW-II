@@ -23,14 +23,7 @@ module.exports = {
           defaultValuse: Sequelize.literal('NOW()')
         }
       },
-      {
-        indexes: [
-          {
-            unique: true,
-            fields: ['userId', 'movieId']
-          }
-        ]
-      });
+      );
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('users');

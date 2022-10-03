@@ -1,4 +1,4 @@
-const Users = require('../models').Users
+const Users = require('../models').User
 
 class UsersRepository {
     async getAll(fields = undefined) {
@@ -26,6 +26,14 @@ class UsersRepository {
             where: { id: id }
         })
     }
+
+    async getAllOMovie(id, fields = undefined) {
+        return await Region.findAll({
+            where: { id: id },
+            attributes: fields
+        })
+    }
+
 }
 
 module.exports = new UsersRepository()

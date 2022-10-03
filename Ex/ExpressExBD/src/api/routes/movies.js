@@ -10,4 +10,7 @@ router.patch('/:id', controller.update)
 router.delete('/:id', controller.delete);
 
 
+router.get('/:id/genres', controller.getGenres)
+router.get('/:id/users', controller.getUsers)
+
 module.exports = router

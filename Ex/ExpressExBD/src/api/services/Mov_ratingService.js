@@ -25,9 +25,7 @@ class Mov_genrsService {
         return await GenresRepository.delete(id)
     }
 
-    async getLocations(genreId) {
-        return await GenresRepository.getAllOfGenre(genreId)
-    }
+ 
 }
 
 module.exports = new Mov_genrsService()

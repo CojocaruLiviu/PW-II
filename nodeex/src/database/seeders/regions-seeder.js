@@ -1,13 +1,13 @@
 'use strict';
 
-const regions = require('../../data/seeders/regions-seeder.json')
+const users = require('../../data/seeders/users-seeder.json')
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-      await queryInterface.bulkInsert('regions', regions, {});
+      await queryInterface.bulkInsert('users', users, {});
   },
 
   down: async (queryInterface, Sequelize) => {
-      await queryInterface.bulkDelete('regions', null, {});
+      await queryInterface.bulkDelete('users', null, {});
   }
 };

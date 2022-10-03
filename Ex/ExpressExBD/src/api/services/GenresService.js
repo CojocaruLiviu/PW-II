@@ -1,5 +1,5 @@
 const GenresRepository = require('../../database/repositories/GenresRepository')
-const TipesRepository = require('../../database/repositories/Mov_ratingsRepository')
+const MoviesRepository = require('../../database/repositories/MoviesRepository')
 
 class GenresService {
     async getAll(fields = undefined) {
@@ -26,8 +26,8 @@ class GenresService {
         return await GenresRepository.delete(id)
     }
 
-    async getLocations(genreId) {
-        return await TipesRepository.getAllOfServices(genreId)
+    async getMovies(id) {
+        return await MoviesRepository.getAllOfServices(id)
     }
 }
 

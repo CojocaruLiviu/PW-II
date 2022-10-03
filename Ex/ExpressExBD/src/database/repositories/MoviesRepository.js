@@ -26,6 +26,13 @@ class MoviesRepository {
             where: { id: id }
         })
     }
+
+    async getAllOfMovie(id, fields = undefined) {
+        return await Movie.findAll({
+            where: { id: id },
+            attributes: fields
+        })
+    }
 }
 
 module.exports = new MoviesRepository()

@@ -2,7 +2,7 @@ const Genre = require('../models').Genre
 
 class GenresRepository {
     async getAll(fields = undefined) {
-        return await Genre.findAll({attributes: fields})
+        return await Genre.findAll({ attributes: fields })
     }
 
     async getOne(id) {
@@ -31,12 +31,7 @@ class GenresRepository {
         return null;
     }
 
-    async getAllOfMovie(movieId, fields = undefined) {
-        return await Genre.findAll({
-            where: { movieId: movieId },
-            attributes: fields
-        })
-    }
+   
 }
 
 module.exports = new GenresRepository()

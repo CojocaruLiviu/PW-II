@@ -1,13 +1,13 @@
 'use strict';
 
-const countries = require('../../data/seeders/countries-seeder.json')
+const movies = require('../../data/seeders/movies-seeder.json')
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-      await queryInterface.bulkInsert('countries', countries, {}); 
+      await queryInterface.bulkInsert('movies', movies, {}); 
   },
 
   down: async (queryInterface, Sequelize) => {
-      await queryInterface.bulkDelete('countries', null, {});
+      await queryInterface.bulkDelete('movies', null, {});
   }
 };

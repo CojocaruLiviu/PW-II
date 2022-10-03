@@ -9,28 +9,21 @@ module.exports = {
           foreignKey: true,
           type: Sequelize.INTEGER,
           // references: {
-          // //   model: 'genres',
-          // //   key: 'id'
-          // // }
+          //   model: 'genre',
+          //   key: 'id'
+          // }
         },
         movie_id: {
           allowNull: false,
           type: Sequelize.INTEGER,
           foreignKey: true,
-          // references: {
-          //   model: 'movies',
+          //   references: {
+          //   model: 'movie',
           //   key: 'id'
           // }
         }
       },
-      {
-        indexes: [
-          {
-            unique: true,
-            fields: ['genreId', 'movieId']
-          }
-        ]
-      });
+    );
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('mov-genr');

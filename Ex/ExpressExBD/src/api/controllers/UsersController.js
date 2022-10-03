@@ -14,9 +14,9 @@ class UsersController{
 
     async getOne(request, response){
         try{
-            const country = await UsersService.getOne(request.params.id)
-            if(country){
-                return response.status(200).json(country)
+            const user = await UsersService.getOne(request.params.id)
+            if(user){
+                return response.status(200).json(user)
             }
             return response.status(404).json()
         } catch(error){
@@ -34,9 +34,9 @@ class UsersController{
 
     async update(request, response){
         try{
-            const existingCountry = await UsersService.getOne(request.params.id)
-            if(existingCountry){
-                return response.status(200).json(await existingCountry.update(request.body));
+            const existingUser = await UsersService.getOne(request.params.id)
+            if(existingUser){
+                return response.status(200).json(await existingUser.update(request.body));
             }
             return response.status(404).json();
         } catch(error){

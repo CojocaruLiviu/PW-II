@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('regions',
+    await queryInterface.createTable('user',
       {
         id: {
           allowNull: false,
@@ -15,10 +15,10 @@ module.exports = {
         code: {
           type: Sequelize.STRING(2)
         },
-        countryId: {
+        movieId: {
           type: Sequelize.INTEGER,
           references: {
-            model: 'countries',
+            model: 'movies',
             key: 'id'
           }
         },
@@ -34,15 +34,15 @@ module.exports = {
         }
       },
       {
-        indexes: [
-          {
-            unique: true,
-            fields: ['name', 'countryId']
-          }
-        ]
+        // indexes: [
+        //   {
+        //     unique: true,
+        //     fields: ['name', 'countryId']
+        //   }
+        // ]
       });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('regions');
+    await queryInterface.dropTable('user');
   }
 };

@@ -31,12 +31,8 @@ class Mov_CommRepository {
         return null;
     }
 
-    async getAllOfMovie(movieId, fields = undefined) {
-        return await Mov_Comm.findAll({
-            where: { movieId: movieId },
-            attributes: fields
-        })
-    }
+    
+    
 }
 
 module.exports = new Mov_CommRepository()

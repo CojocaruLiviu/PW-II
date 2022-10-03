@@ -1,4 +1,4 @@
-const Mov_Genres = require('../models').Mov_Genres
+const Mov_Genres = require('../models').Mov_genr
 
 class Mov_GenresRepository {
     async getAll(fields = undefined) {
@@ -31,12 +31,8 @@ class Mov_GenresRepository {
         return null;
     }
 
-    async getAllOfMovie(movieId, fields = undefined) {
-        return await Mov_Genres.findAll({
-            where: { movieId: movieId },
-            attributes: fields
-        })
-    }
+   
+   
 }
 
 module.exports = new Mov_GenresRepository()

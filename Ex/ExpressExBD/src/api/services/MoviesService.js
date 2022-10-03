@@ -1,6 +1,6 @@
 const MoviesRepository = require('../../database/repositories/MoviesRepository')
 const GenresRepository = require('../../database/repositories/GenresRepository')
-const ReviewsRepository = require('../../database/repositories/Mov_ratingsRepository')
+const UsersRepository = require('../../database/repositories/UsersRepository')
 
 class MoviesService {
     async getAll(fields = undefined) {
@@ -11,14 +11,14 @@ class MoviesService {
         return await MoviesRepository.getOne(id)
     }
 
-    async create(genre) {
-        return await MoviesRepository.create(genre)
+    async create(movie) {
+        return await MoviesRepository.create(movie)
     }
 
-    async update(id, genre) {
-        const existingGenre = await MoviesRepository.getOne(id)
-        if (existingGenre) {
-            return await existingGenre.update(genre);
+    async update(id, movie) {
+        const existingmovie = await MoviesRepository.getOne(id)
+        if (existingmovie) {
+            return await existingmovie.update(movie);
         }
         return null;
     }
@@ -27,12 +27,12 @@ class MoviesService {
         return await MoviesRepository.delete(id)
     }
 
-    async getMovies(genreId, fields) {
-        return await GenresRepository.getAllOfGenre(genreId, fields);
+    async getGenres(movieId, fields) {
+        return await GenresRepository.getAllOfmovie(movieId, fields);
     }
 
-    async getGenres(genreId, fields) {
-        return await TypesRepository.getAllOfType(genreId, fields);
+    async getUsers(movieId, fields) {
+        return await UsersRepository.getAllOfmovie(movieId, fields);
     }
 }
 
