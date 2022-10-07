@@ -11,3 +11,4 @@ app.listen(process.env.SERVER_PORT, process.env.SERVER_URL, () => {
 })
 
 require('./database').init()
+

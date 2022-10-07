@@ -1,3 +1,4 @@
+
 const Sequelize = require("sequelize");
 const db = {
     init: async () => {
@@ -20,5 +21,4 @@ const db = {
         }
     }
 };
-
 module.exports = db
