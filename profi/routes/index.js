@@ -5,7 +5,7 @@ const MovieRouter = require('./MovieRouter')
 const GenreRouter = require('./GenreRouter')
 const UserRouter = require('./UserRouter')
 const PORT = process.env.PORT || 3000
- 
+
 const app = express()
 
 app.use(express.json())
@@ -15,7 +15,11 @@ app.use(express.json())
 // app.use('/UserRouter',UserRouter);
 
 
+
+
 const modules = ['authRouter','MovieRouter','GenreRouter','UserRouter']
+
+
 
 modules.forEach(module => {
     app.use(`/${module}`, require(`./${module}`))
@@ -30,6 +34,8 @@ const start = async () => {
         console.log(e)
     }
 }
+
+
 
 start()
 
