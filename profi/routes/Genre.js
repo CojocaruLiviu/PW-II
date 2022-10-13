@@ -3,8 +3,8 @@ const router = new Router();
  
 const controller = require('../controllers/GenreController')
 
-router.post('/genre', controller.create)
-router.get('/genre', controller.getAll)
-router.get('/genre/:id', controller.getOne)
+router.post('/', controller.create)
+router.get('/', controller.getAll)
+router.get('/:id', controller.getOne)
 
 module.exports = router

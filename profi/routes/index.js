@@ -1,24 +1,13 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const authRouter = require('./authRouter')
-const MovieRouter = require('./MovieRouter')
-const GenreRouter = require('./GenreRouter')
-const UserRouter = require('./UserRouter')
 const PORT = process.env.PORT || 3000
 
 const app = express()
 
 app.use(express.json())
-// app.use('/authRouter',authRouter);
-// app.use('/MovieRouter',MovieRouter);
-// app.use('/GenreRouter',GenreRouter);
-// app.use('/UserRouter',UserRouter);
 
 
-
-
-const modules = ['authRouter','MovieRouter','GenreRouter','UserRouter']
-
+const modules = ['Authorization','Movie','Genre','User']
 
 
 modules.forEach(module => {
