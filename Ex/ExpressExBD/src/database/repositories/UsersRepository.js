@@ -9,7 +9,9 @@ class UsersRepository {
         return await Users.create(movie)
     }
     
-
+    async findOne(username) {
+        return await Users.findOne(username = username)
+    }
 
     async registration(fields = undefined) {
         return await Users.registration(fields = undefined)

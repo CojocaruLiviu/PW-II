@@ -1,0 +1,21 @@
+{
+  "name": "profi_auth_nodejs",
+  "version": "1.0.0",
+  "main": " routes/index.js",
+  "scripts": {
+    "start": "nodemon routes/index.js"
+  },
+  "keywords": [],
+  "author": "Liviu",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.1",
+    "express-validator": "^6.7.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.15",
+    "nodemon": "^2.0.20"
+  },
+  "devDependencies": {},
+  "description": ""
+}
