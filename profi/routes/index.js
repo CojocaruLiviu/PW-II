@@ -2,17 +2,24 @@ const express = require('express')
 const mongoose = require('mongoose')
 const authRouter = require('./authRouter')
 const MovieRouter = require('./MovieRouter')
+const GenreRouter = require('./GenreRouter')
+const UserRouter = require('./UserRouter')
 const PORT = process.env.PORT || 3000
  
 const app = express()
-// const modules = ['authRouter','MovieRouter']
 
-// modules.forEach(module => {
-//     app.use(`/${module}`, require(`./${module}`))
-// })
 app.use(express.json())
-app.use('/authRouter',authRouter);
-app.use('/MovieRouter',MovieRouter);
+// app.use('/authRouter',authRouter);
+// app.use('/MovieRouter',MovieRouter);
+// app.use('/GenreRouter',GenreRouter);
+// app.use('/UserRouter',UserRouter);
+
+
+const modules = ['authRouter','MovieRouter','GenreRouter','UserRouter']
+
+modules.forEach(module => {
+    app.use(`/${module}`, require(`./${module}`))
+})
 
 
 const start = async () => {

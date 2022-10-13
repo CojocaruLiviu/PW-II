@@ -1,4 +1,4 @@
-const Genre = require('../models/Genre')
+const User = require('../models/User')
 const { Model } = require('mongoose');
 
 
@@ -6,13 +6,13 @@ class MovieController {
     async create(request, response) {
         try {
             const {id, name} = request.body
-            const candidate = await Genre.findOne({id})
+            const candidate = await User.findOne({id})
             if (candidate) { 
-                return response.status(400).json({message: "Genre with that id already exists"})
+                return response.status(400).json({message: "User with that id already exists"})
             }
-            const user = new Genre({id, name })
+            const user = new User({id, name })
             await user.save()
-            return response.json({message: "Genre successfully registered"})
+            return response.json({message: "User successfully registered"})
 
         } catch (e) {
             console.log(e)
@@ -23,7 +23,7 @@ class MovieController {
 
     async getAll(request, response){
         try {
-            const users = await Genre.find()
+            const users = await User.find()
             response.json(users)
         } catch (e) {
             console.log(e)
@@ -34,7 +34,7 @@ class MovieController {
     async getOne(request, response){
         try {
             const {id} = request.params
-                    const candidate = await Genre.findOne({id} )
+                    const candidate = await User.findOne({id} )
                 return response.json(candidate)
             } catch (e) {
                 console.log(e)
@@ -45,7 +45,7 @@ class MovieController {
     async update(request, response){
         try{
             const {id, name, year, time} = request.params
-            const candidate = await Genre.findOne({id})
+            const candidate = await User.findOne({id})
             if (candidate) {
                 candidate = candidate({name, year, time})
             }
@@ -58,7 +58,7 @@ class MovieController {
 
     async delete(request, response){
         try{
-            return response.status(200).json(await GenreService.delete(request.params.id))
+            return response.status(200).json(await UserService.delete(request.params.id))
         } catch(error){
             return response.status(400).json(JSON.stringify(error))
         }
