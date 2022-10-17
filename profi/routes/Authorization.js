@@ -10,8 +10,8 @@ router.post('/registration',
     check('username', "Username can't be empty").notEmpty(),
     check('password', "Password must be more than 2 and less than 10 characters").isLength({min:2, max:10})
 ],
- controller.registration)
+controller.registration)
 router.post('/login', controller.login)
-router.get('/users', roleMiddleware(["ADMIN"]),controller.getUsers)
+router.get('/users', roleMiddleware(["ADMIN","USER"]),controller.getUsers)
 
 module.exports = router

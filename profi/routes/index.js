@@ -1,3 +1,4 @@
+const { response } = require('express')
 const express = require('express')
 const mongoose = require('mongoose')
 const PORT = process.env.PORT || 3000
@@ -9,6 +10,9 @@ app.use(express.json())
 
 const modules = ['Authorization','Movie','Genre','User']
 
+app.get('/', (request, response) => {
+    response.send('<h2>Backend Work<h2>')
+})
 
 modules.forEach(module => {
     app.use(`/${module}`, require(`./${module}`))
