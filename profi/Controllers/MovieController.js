@@ -63,6 +63,8 @@ class MovieController {
             return response.status(400).json(JSON.stringify(error))
         }
     }
+
+    
 }
 
 module.exports = new MovieController()

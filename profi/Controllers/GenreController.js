@@ -44,12 +44,16 @@ class MovieController {
 
     async update(request, response){
         try{
-            const {id, name, year, time} = request.params
+            const {id, name} = request.params
             const candidate = await Genre.findOne({id})
-            if (candidate) {
-                candidate = candidate({name, year, time})
+        
+            if (candidate) { 
+                return response.status(400).json({message: "Genre with that not exists"})
             }
-            return response.status(404).json();
+            const user = new Genre({id, name })
+            await user.save()
+            return response.json({message: "Genre with that id exists"})
+
         } catch (e) {
             console.log(e)
             response.status(400).json({message: 'Add data error'})
